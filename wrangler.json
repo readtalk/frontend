@@ -11,13 +11,20 @@
     "assets": {
       "directory": "./build/client"
     },
-    "r2_buckets": [
-        {
-            "binding": "MESSAGE_ASSETS",
-            "bucket_name": "message-assets"
-        }
+    "d1_databases": [
+      {
+        "binding": "SERVER_D1",
+        "database_name": "SERVER_D1",
+        "database_id": "SERVER_D1"
+      }
+    ],
+    "kv_namespaces": [
+      {
+        "binding": "SERVER_KV",
+        "id": "SERVER_KV"
+      }
     ],
     "vars": {
       "VALUE_FROM_CLOUDFLARE": "Hello from Cloudflare"
     }
-  }
+}
