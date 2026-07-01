@@ -98,7 +98,7 @@ export default function AuthLayout() {
     const handleSignOut = async () => {
         try {
             const sessionId = localStorage.getItem('session');
-            await fetch('https://group-chat.brayden-b8b.workers.dev/logout', {
+            await fetch('https://backend.soeparnocorp.workers.dev/logout', {
                 method: 'POST',
                 headers: {
                     'X-Session-Id': sessionId || ''
