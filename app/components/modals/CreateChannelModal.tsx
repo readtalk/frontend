@@ -24,7 +24,7 @@ export const CreateChannelModal = ({ onClose }: CreateChannelModalProps) => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://group-chat.brayden-b8b.workers.dev/channels', {
+      const response = await fetch('https://backend.soeparnocorp.workers.dev/channels', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
