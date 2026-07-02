@@ -181,7 +181,7 @@ export default function Register() {
           <p>
             Already have an account?{" "}
             <a
-              href="/auth/login"
+              href="/login"
               className="font-medium text-indigo-600 hover:text-indigo-500"
             >
               Sign in
