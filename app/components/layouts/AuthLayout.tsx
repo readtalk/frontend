@@ -271,7 +271,7 @@ export default function AuthLayout() {
                         {/* Sidebar */}
                         <div className="w-64 bg-white dark:bg-neutral-900 h-full shadow-xl p-4 overflow-y-auto">
                             <div className="flex justify-between items-center mb-4">
-                                <span className="font-bold text-lg">READTalk</span>
+                                <span className="font-bold text-lg">Resend List</span>
                                 <button
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className="p-1 hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded"
