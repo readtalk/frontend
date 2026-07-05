@@ -1,0 +1,30 @@
+{
+    "$schema": "./node_modules/wrangler/config-schema.json",
+    "name": "frontend",
+    "main": "./build/server/index.js",
+    "compatibility_date": "2024-11-01",
+    "compatibility_flags": ["nodejs_compat"],
+    "observability": {
+      "enabled": true
+    },
+    "upload_source_maps": true,
+    "assets": {
+      "directory": "./build/client"
+    },
+    "d1_databases": [
+      {
+        "binding": "SERVER_D1",
+        "database_name": "SERVER_D1",
+        "database_id": "9c6d47de-7136-494a-96aa-3e16648a4880"
+      }
+    ],
+    "kv_namespaces": [
+      {
+        "binding": "SERVER_KV",
+        "id": "54f89be27a414fabaf381a919403582e"
+      }
+    ],
+    "vars": {
+      "VALUE_FROM_CLOUDFLARE": "Hello from Cloudflare"
+    }
+}
