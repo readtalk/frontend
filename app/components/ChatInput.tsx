@@ -127,7 +127,7 @@ export function ChatInput({
             onChange={(e) => onChange(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder="Message #channel-name"
-            className="flex-1 resize-none bg-neutral-100 dark:bg-neutral-800 rounded-lg px-3 py-2 focus:outline-none min-h-[40px] max-h-[120px] text-sm"
+            className="flex-1 resize-none bg-neutral-100 dark:bg-neutral-800 rounded-lg px-3 py-2 focus:outline-none min-h-[40px] max-h-[120px] text-base"
             rows={1}
             disabled={isSending}
           />
