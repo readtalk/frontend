@@ -119,7 +119,7 @@ export function ChatInput({
             onClick={() => setShowEmojiPicker(!showEmojiPicker)}
             className="p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-full flex-shrink-0 text-xl"
           >
-            😊
+            🎭
           </button>
 
           {/* Tombol Upload */}
@@ -144,7 +144,7 @@ export function ChatInput({
             value={message}
             onChange={(e) => onChange(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Message #channel-name"
+            placeholder="Message"
             className="flex-1 resize-none bg-neutral-100 dark:bg-neutral-800 rounded-lg px-3 py-2 focus:outline-none min-h-[40px] max-h-[120px] text-base"
             rows={1}
             disabled={isSending}
@@ -153,7 +153,7 @@ export function ChatInput({
           <button
             type="submit"
             disabled={isSending || !message.trim()}
-            className="p-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0 w-10 h-10 flex items-center justify-center"
+            className="p-2 bg-red-500 text-white rounded-full hover:bg-red-600 disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0 w-10 h-10 flex items-center justify-center"
           >
             ➤
           </button>
