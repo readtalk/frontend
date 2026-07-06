@@ -330,7 +330,7 @@ export default function Channel() {
                 >
                     {isLoadingMessages ? (
                         <div className="flex justify-center items-center h-full">
-                            <div className="w-6 h-6 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
+                            <div className="w-6 h-6 border-2 border-red-500 border-t-transparent rounded-full animate-spin" />
                         </div>
                     ) : (
                         <div className="space-y-4">
