@@ -46,8 +46,7 @@ export default function Login() {
     setCredentials(prev => ({...prev, [name]: value }));
   };
 
-  return (
-    // 1. BG SAMA KAYAK WELCOME
+  return (    
     <div className="flex min-h-screen items-center justify-center bg-white dark:bg-zinc-950 px-4 py-8">
       {/* 2. HAPUS CARD rounded-lg shadow-md */}
       <div className="w-full max-w-[400px] bg-white dark:bg-zinc-950">
@@ -79,8 +78,7 @@ export default function Login() {
             </div>
           </div>
           {error && ( <div className="text-[#FF0000] text-sm text-center"> {error} </div> )}
-          <div>
-            {/* 3. TOMBOL SAMAIN: h-12 rounded-full bg-[#FF0000] */}
+          <div>          
             <button
               type="submit"
               disabled={isLoading}
