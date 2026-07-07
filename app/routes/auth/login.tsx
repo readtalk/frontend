@@ -75,10 +75,10 @@ export default function Login() {
       <div className="w-full max-w-md rounded-lg bg-white text-black p-8 shadow-md">
         <div>
           <h2 className="text-center text-3xl font-bold tracking-tight">
-            Sign in to Chat
+            Login
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            Please enter your credentials
+            © SOEPARNO ENTERPRISE Corp.
           </p>
         </div>
 
@@ -126,7 +126,7 @@ export default function Login() {
             <button
               type="submit"
               disabled={isLoading}
-              className="group relative flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 disabled:opacity-50"
+              className="group relative flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 disabled:opacity-50"
             >
               {isLoading ? "Signing in..." : "Sign in"}
             </button>
@@ -138,7 +138,7 @@ export default function Login() {
             Don't have an account?{" "}
             <a
               href="/register"
-              className="font-medium text-indigo-600 hover:text-indigo-500"
+              className="font-medium text-blue-600 hover:text-blue-500"
             >
               Sign up
             </a>
