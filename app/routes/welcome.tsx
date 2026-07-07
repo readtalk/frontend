@@ -32,7 +32,7 @@ export default function Welcome() {
           <p className="text-sm text-neutral-500 dark:text-neutral-400 text-center leading-6 px-4">Read our <Link to="/privacy" className="text-[#FF0000] font-medium">Privacy Policy</Link>. Tap "Agree and continue" to accept the <Link to="/tos" className="text-[#FF0000] font-medium">Terms of Service</Link>.</p>
           <div className="flex items-center gap-2 text-sm font-medium text-neutral-800 dark:text-neutral-200"><Globe size={18} /><select className="appearance-none bg-transparent text-center focus:outline-none"><option value="en">English</option><option value="id">Bahasa Indonesia</option></select><CaretDown size={14} /></div>
           
-          <div className="w-full pt-4">
+          <div className="w-full px-6 pt-4">
             <Link to="/register" className="flex w-full h-12 items-center justify-center rounded-full bg-[#FF0000] text-base font-semibold text-white shadow-md transition active:scale-[0.98] hover:bg-[#CC0000]">Agree and continue</Link>
           </div>
 
