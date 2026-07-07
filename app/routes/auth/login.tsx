@@ -32,7 +32,7 @@ export default function Login() {
     setIsLoading(true);
 
     try {
-      const response = await fetch("https://backend.readtalk.workers.dev/login", {
+      const response = await fetch("https://api.readtalk.workers.dev/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
