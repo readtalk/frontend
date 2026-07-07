@@ -103,7 +103,7 @@ export default function Channel() {
             addMessageListener(id, (message) => {
                 setLocalMessages(prev => [...prev, message]);
                 
-                // 🔔 PLAY SOUND FOR INCOMING MESSAGE (RECEIVE)
+                // 🔔 PLAY SOUND FOR INCOMING MESSAGE
                 const audio = new Audio('/notification/to-the-point-568.mp3');
                 audio.play().catch(() => {});
 
@@ -229,8 +229,8 @@ export default function Channel() {
                 throw new Error('Failed to send message');
             }
             if (data.success && data.message) {
-                // 🔔 PLAY SOUND FOR OUTGOING MESSAGE (SENDING)
-                const audio = new Audio('/notification/happy-to-help-notification-sound.mp3');
+                // 🔔 PLAY SOUND FOR OUTGOING MESSAGE
+                const audio = new Audio('/notification/to-the-point-568.mp3');
                 audio.play().catch(() => {});
 
                 if (isNearBottomRef.current) {
