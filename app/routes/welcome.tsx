@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Phone, LockKey, Globe, Heart, ChatsCircle, CaretDown } from "@phosphor-icons/react";
+import { Phone, LockKey, Globe, Heart, ChatText } from "@phosphor-icons/react";
 
 export default function Welcome() {
   const [showLogo, setShowLogo] = useState(true);
 
-  // LOOP WA: Tampil 2s -> Fade 500ms -> Pause 800ms -> Ganti
+  // CEPETIN: 2500ms = 1500 tampil + 400 fade + 600 jeda
   useEffect(() => {
     const interval = setInterval(() => {
       setShowLogo(prev =>!prev);
-    }, 3300); // 2000 tampil + 500 fade + 800 pause
+    }, 2500); 
     return () => clearInterval(interval);
   }, []);
 
@@ -18,25 +18,33 @@ export default function Welcome() {
       <div className="w-full max-w-[420px] bg-white dark:bg-zinc-950 rounded-2xl">
         <div className="flex flex-col items-center px-6 pt-12 pb-6">
 
-          {/* AREA ILUSTRASI - TINGGI DIKUNCI */}
-          <div className="relative w-48 h-48 flex items-center justify-center">
+          {/* AREA ILUSTRASI GEDE */}
+          <div className="relative w-64 h-64 flex items-center justify-center">
 
             {/* LOGO 192.PNG */}
             <img
               src="/assets/192.png"
               alt="READTalk Logo"
-              className={`w-24 h-24 rounded-2xl shadow-sm absolute transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]
-                ${showLogo? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}
+              className={`w-28 h-28 rounded-2xl shadow-lg absolute z-10 transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]
+                ${showLogo? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}
             />
 
-            {/* 5 ICON PHOSPHOR BERANTAKAN */}
-            <div className={`absolute w-full h-full transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]
-              ${!showLogo? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
-              <ChatsCircle size={32} weight="fill" className="absolute top-2 left-4 text-neutral-300 dark:text-neutral-700" />
-              <Phone size={24} weight="fill" className="absolute top-6 right-2 text-neutral-300 dark:text-neutral-700" />
-              <LockKey size={28} weight="fill" className="absolute bottom-8 left-2 text-neutral-300 dark:text-neutral-700" />
-              <Globe size={26} weight="fill" className="absolute bottom-4 right-6 text-neutral-300 dark:text-neutral-700" />
-              <Heart size={22} weight="fill" className="absolute top-1/2 -right-2 text-neutral-300 dark:text-neutral-700" />
+            {/* ILUSTRASI NUMPUK BERANTAKAN - WARNA NETRAL */}
+            <div className={`absolute w-full h-full transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]
+              ${!showLogo? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
+              
+              {/* Chat Bubble Belakang */}
+              <ChatText size={160} weight="fill" className="absolute top-4 left-0 text-neutral-200 dark:text-neutral-800 rotate-[-10deg]" />
+              {/* Globe */}
+              <Globe size={100} weight="fill" className="absolute top-0 right-4 text-neutral-300 dark:text-neutral-700" />
+              {/* Chat Bubble Depan */}
+              <ChatText size={140} weight="fill" className="absolute bottom-6 left-8 text-neutral-200 dark:text-neutral-800 rotate-[5deg]" />
+              {/* Gembok */}
+              <LockKey size={70} weight="fill" className="absolute bottom-2 right-6 text-neutral-400 dark:text-neutral-600" />
+              {/* Telpon */}
+              <Phone size={60} weight="fill" className="absolute top-8 left-4 text-neutral-400 dark:text-neutral-600" />
+              {/* Love */}
+              <Heart size={50} weight="fill" className="absolute bottom-10 left-4 text-neutral-400 dark:text-neutral-600" />
             </div>
           </div>
 
@@ -45,25 +53,15 @@ export default function Welcome() {
             Welcome to READTalk
           </h1>
           <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400 text-center leading-5">
-            Read our <Link to="/privacy" className="text-[#FF0000] font-medium">Privacy Policy</Link>. Tap "Agree and continue" to accept the <Link to="/tos" className="text-[#FF0000] font-medium">Terms of Service</Link>.
+            Read our <Link to="/privacy" className="text-neutral-900 dark:text-white font-medium underline">Privacy Policy</Link>. Tap "Agree and continue" to accept the <Link to="/tos" className="text-neutral-900 dark:text-white font-medium underline">Terms of Service</Link>.
           </p>
-
-          <div className="mt-4 flex items-center gap-2 text-sm font-medium text-neutral-700 dark:text-neutral-300">
-            <Globe size={18} />
-            <select className="appearance-none bg-transparent text-center focus:outline-none">
-              <option value="en">English</option>
-              <option value="id">Bahasa Indonesia</option>
-            </select>
-            <CaretDown size={14} />
-          </div>
         </div>
 
         <div className="w-full px-6 pb-6">
-          <Link to="/register" className="flex w-full h-14 items-center justify-center rounded-full bg-[#FF0000] text-base font-semibold text-white shadow-md transition active:scale-[0.98] hover:bg-[#CC0000]">
+          <Link to="/register" className="flex w-full h-14 items-center justify-center rounded-full bg-neutral-900 dark:bg-white text-base font-semibold text-white dark:text-black shadow-md transition active:scale-[0.98]">
             Agree and continue
           </Link>
         </div>
-
       </div>
     </div>
   );
