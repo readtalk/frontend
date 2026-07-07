@@ -48,8 +48,8 @@ export const WebSocketProvider = ({ children }: { children: React.ReactNode }) =
             console.log('WebSocket message received:', data);
             
             if (data.type === 'NEW_MESSAGE' && data.message) {
-                // 🔔 PLAY SOUND FOR INCOMING MESSAGE
-                const audio = new Audio('/notification/pristine-609.mp3');
+                // 🔔 SOUND RECEIVE MESSAGE
+                const audio = new Audio('/notification/to-the-point-568.mp3');
                 audio.play().catch(() => {});
 
                 notifyNewMessage(data.message.channel_id, data.message);
