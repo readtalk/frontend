@@ -78,7 +78,7 @@ export default function Login() {
             Login
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            © SOEPARNO ENTERPRISE Corp.
+            © 2026 SOEPARNO ENTERPRISE Corp.
           </p>
         </div>
 
