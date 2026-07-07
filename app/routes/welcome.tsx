@@ -1,47 +1,46 @@
 // app/routes/welcome.tsx
 import { Link } from "react-router-dom";
-import { ChatsCircle, Globe, CaretDown } from "@phosphor-icons/react";
+import { Globe } from "@phosphor-icons/react";
 
 export default function Welcome() {
   return (
     <div className="flex min-h-screen flex-col justify-between bg-white dark:bg-zinc-950">
-      
-      {/* BAGIAN ATAS: pt-12 px-6 - sama kayak WA */}
+
+      {/* ATAS - pt-12 px-6 */}
       <div className="flex flex-col items-center px-6 pt-12">
-        
-        {/* Logo: w-20 h-20 - SAMA KAYAK KODE LU AWAL */}
-        <div className="w-20 h-20 bg-[#FF0000] rounded-full flex items-center justify-center text-white shadow-lg">
-          <ChatsCircle size={40} weight="fill" /> {/* Ganti RT text jadi icon */}
+
+        {/* ILUSTRASI - w-20 h-20, bulat merah */}
+        <div className="w-20 h-20 bg-[#FF0000] rounded-full flex items-center justify-center text-white shadow-md">
+          <span className="text-3xl font-bold">RT</span> {/* SS WA pake gambar, kita pake RT dulu */}
         </div>
 
-        {/* Judul: mt-6 text-3xl - SAMA KAYAK REGISTER LU */}
-        <h1 className="mt-6 text-3xl font-bold text-neutral-900 dark:text-white text-center tracking-tight">
+        {/* JUDUL - mt-6 text-2xl font-bold */}
+        <h1 className="mt-6 text-2xl font-bold text-neutral-900 dark:text-white text-center">
           Welcome to READTalk
         </h1>
 
-        {/* Deskripsi: mt-2 text-sm - SAMA KAYAK REGISTER LU */}
-        <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400 text-center max-w-xs leading-5">
-          Read our <Link to="/privacy" className="text-[#FF0000] font-medium">Privacy Policies</Link>. Tap "Agree and continue" to accept our <Link to="/tos" className="text-[#FF0000] font-medium">Terms of Service</Link>.
+        {/* DESKRIPSI - mt-2 text-sm text-center max-w-xs */}
+        <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400 text-center max-w-[280px] leading-5">
+          Read our <a href="/privacy" className="text-[#128C7E]">Privacy Policy</a>. Tap "Agree and continue" to accept the <a href="/tos" className="text-[#128C7E]">Terms of Service</a>.
         </p>
 
-        {/* Dropdown: mt-4 w-full max-w-xs - SAMA KAYAK KODE LU AWAL */}
+        {/* DROPDOWN - mt-4 w-full max-w-xs */}
         <div className="mt-4 w-full max-w-xs">
-          <div className="relative">
-            <Globe size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400" />
-            <select className="w-full appearance-none rounded-lg border border-neutral-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 px-10 py-2 text-sm text-neutral-700 dark:text-neutral-200 focus:border-[#FF0000] focus:outline-none focus:ring-1 focus:ring-[#FF0000]">
+          <div className="relative flex items-center justify-center gap-2 text-sm text-neutral-700 dark:text-neutral-300">
+            <Globe size={18} />
+            <select className="appearance-none bg-transparent text-center font-medium focus:outline-none">
               <option value="en">English</option>
-              <option value="id">Indonesia</option>
+              <option value="id">Bahasa Indonesia</option>
             </select>
-            <CaretDown size={16} className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 pointer-events-none" />
           </div>
         </div>
       </div>
 
-      {/* BAGIAN BAWAH: px-6 pb-10 - SAMA KAYAK WA */}
+      {/* BAWAH - px-6 pb-10 */}
       <div className="w-full px-6 pb-10">
-        <Link 
-          to="/register" 
-          className="inline-flex w-full items-center justify-center rounded-lg bg-[#FF0000] px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#CC0000] active:scale-[0.98]" // py-2 px-3 SAMA KAYAK REGISTER
+        <Link
+          to="/register"
+          className="inline-flex w-full items-center justify-center rounded-full bg-[#128C7E] px-6 py-3.5 text-base font-semibold text-white shadow-sm transition active:scale-[0.98]"
         >
           Agree and continue
         </Link>
