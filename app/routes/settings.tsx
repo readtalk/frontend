@@ -1,4 +1,4 @@
-// app/routes/profile.tsx
+// app/routes/settings.tsx
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { Avatar } from '~/components/avatar/Avatar';
