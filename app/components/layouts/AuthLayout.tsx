@@ -165,7 +165,7 @@ export default function AuthLayout() {
                                         onClick={() => setShowThemeDropdown(false)}
                                     >
                                         <User size={16} className="mr-2" />
-                                        Profile
+                                        Settings
                                     </Link>
                                     
                                     <div className="h-px bg-neutral-200 dark:bg-neutral-700 my-1" />
