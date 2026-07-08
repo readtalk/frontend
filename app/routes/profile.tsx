@@ -7,11 +7,10 @@ import { Label } from '~/components/label/Label';
 import { Card } from '~/components/card/Card';
 import { Loader } from '~/components/loader/Loader';
 import { UploadAvatarModal } from '~/components/modals/UploadAvatarModal';
-import { cn } from '~/utils/tw';
 
-export async function loader({ context, request }: Route.LoaderArgs) {
+export async function loader() {
+  // Ambil data user dari localStorage atau API
   const sessionId = localStorage.getItem('session');
-  
   if (!sessionId) {
     throw redirect('/login');
   }
@@ -36,7 +35,6 @@ export async function loader({ context, request }: Route.LoaderArgs) {
 export default function Profile() {
   const { user } = useLoaderData();
   const navigate = useNavigate();
-  const { updateUser } = useChatContext();
   
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
@@ -83,7 +81,6 @@ export default function Profile() {
 
       // Update local user data
       if (data.user) {
-        updateUser(data.user);
         localStorage.setItem('user', JSON.stringify(data.user));
       }
 
