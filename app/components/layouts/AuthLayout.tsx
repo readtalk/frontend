@@ -79,7 +79,7 @@ export default function AuthLayout() {
         // 3. 🔥 Ubah warna address bar (theme-color)
         const metaThemeColor = document.querySelector('meta[name="theme-color"]');
         if (metaThemeColor) {
-            metaThemeColor.setAttribute('content', theme === 'dark' ? '#ffffff' : '#ffffff');
+            metaThemeColor.setAttribute('content', theme === 'dark' ? '#000000' : '#ffffff');
         }
     }, [theme]);
 
