@@ -14,7 +14,7 @@ const useTheme = (theme?: 'dark' | 'light') => {
 
     
     if (metaThemeColor) {
-      metaThemeColor.setAttribute('content', theme === 'dark' ? '#ffffff' : '#ffffff')
+      metaThemeColor.setAttribute('content', theme === 'dark' ? '#000000' : '#ffffff')
     }
   }, [theme])
 }
