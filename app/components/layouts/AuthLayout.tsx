@@ -158,10 +158,9 @@ export default function AuthLayout() {
 
                         {showThemeDropdown && (
                             <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-neutral-800 rounded-lg shadow-lg border border-neutral-200 dark:border-neutral-700 z-50">
-                                <div className="py-1">
-                                    {/* 🔥 TAMBAHKAN LINK PROFILE */}
+                                <div className="py-1">                           
                                     <Link
-                                        to="/profile"
+                                        to="/settings"
                                         className="flex items-center px-4 py-2 text-sm w-full hover:bg-neutral-100 dark:hover:bg-neutral-700"
                                         onClick={() => setShowThemeDropdown(false)}
                                     >
