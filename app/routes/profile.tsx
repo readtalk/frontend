@@ -1,5 +1,6 @@
+// app/routes/profile.tsx
 import { useState, useEffect } from 'react';
-import { useLoaderData, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import { Avatar } from '~/components/avatar/Avatar';
 import { Button } from '~/components/button/Button';
 import { Input } from '~/components/input/Input';
@@ -8,51 +9,33 @@ import { Card } from '~/components/card/Card';
 import { Loader } from '~/components/loader/Loader';
 import { UploadAvatarModal } from '~/components/modals/UploadAvatarModal';
 
-export async function loader() {
-  // Ambil data user dari localStorage atau API
-  const sessionId = localStorage.getItem('session');
-  if (!sessionId) {
-    throw redirect('/login');
-  }
-
-  try {
-    const response = await fetch('https://api.readtalk.workers.dev/users/me', {
-      headers: { 'X-Session-Id': sessionId }
-    });
-    
-    if (!response.ok) {
-      throw new Error('Failed to fetch user data');
-    }
-    
-    const data = await response.json();
-    return { user: data.user };
-  } catch (error) {
-    console.error('Error loading profile:', error);
-    return { user: null };
-  }
-}
-
 export default function Profile() {
-  const { user } = useLoaderData();
   const navigate = useNavigate();
   
+  // 🔥 Ambil dari localStorage
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [avatar, setAvatar] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [showUploadModal, setShowUploadModal] = useState(false);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
-  // Load data user
   useEffect(() => {
-    if (user) {
-      setFullName(`${user.first_name || ''} ${user.last_name || ''}`.trim());
-      setEmail(user.email || '');
-      setAvatar(user.avatar || '');
+    const userStr = localStorage.getItem('user');
+    if (userStr) {
+      try {
+        const user = JSON.parse(userStr);
+        setFullName(`${user.first_name || ''} ${user.last_name || ''}`.trim());
+        setEmail(user.email || '');
+        setAvatar(user.avatar || '');
+      } catch (e) {
+        console.error('Failed to parse user:', e);
+      }
     }
-  }, [user]);
+    setIsLoading(false);
+  }, []);
 
   const handleSave = async () => {
     setIsSaving(true);
@@ -79,7 +62,6 @@ export default function Profile() {
         throw new Error(data.message || 'Failed to update profile');
       }
 
-      // Update local user data
       if (data.user) {
         localStorage.setItem('user', JSON.stringify(data.user));
       }
@@ -96,11 +78,10 @@ export default function Profile() {
   const handleAvatarSuccess = (url: string) => {
     setAvatar(url);
     setShowUploadModal(false);
-    // Auto-save after avatar upload
     handleSave();
   };
 
-  if (!user) {
+  if (isLoading) {
     return (
       <div className="flex h-full items-center justify-center">
         <Loader size={32} />
@@ -224,7 +205,6 @@ export default function Profile() {
         </div>
       </Card>
 
-      {/* Upload Avatar Modal */}
       {showUploadModal && (
         <UploadAvatarModal
           onClose={() => setShowUploadModal(false)}
