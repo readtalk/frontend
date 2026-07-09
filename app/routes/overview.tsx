@@ -5,8 +5,8 @@ import { ArrowSquareUpRight } from "@phosphor-icons/react";
 export default function Overview() {
     return (
         <div className="p-8 px-12">
-            {/* Header section */}
-            {/* <PrimaryPageHeader title="Overview" subtitle="Manage your SQLite databases and external connections">
+             Header section
+            <PrimaryPageHeader title="Overview" subtitle="Manage your SQLite databases and external connections">
                 <Button
                     title={'Documentation'}
                     variant="secondary"
@@ -18,9 +18,9 @@ export default function Overview() {
                 >
                     <ArrowSquareUpRight size={16} />
                 </Button>
-            </PrimaryPageHeader> */}
+            </PrimaryPageHeader>
 
-            {/* Main contents */}
+             Main contents
             <div className="w-full flex gap-10">
                 <div className="w-2/3">
                     Left
