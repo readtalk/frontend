@@ -104,7 +104,7 @@ export default function Channel() {
                 setLocalMessages(prev => [...prev, message]);
                 
                 // 🔔 INCOMING SOUND MESSAGE
-                const audio = new Audio('/notification/happy-to-help-notification-sound.mp3');
+                const audio = new Audio('/notification/all-eyes-on-me-465.mp3');
                 audio.play().catch(() => {});
 
                 if (isNearBottomRef.current) {
