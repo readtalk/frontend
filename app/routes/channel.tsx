@@ -230,7 +230,7 @@ export default function Channel() {
             }
             if (data.success && data.message) {
                 // 🔔 OUTGOING SOUND MESSAGE
-                const audio = new Audio('/notification/happy-to-help-notification-sound.mp3');
+                const audio = new Audio('/notification/all-eyes-on-me-465.mp3');
                 audio.play().catch(() => {});
 
                 if (isNearBottomRef.current) {
